@@ -92,5 +92,5 @@ function calcularAreaCirculo(){
     const input = document.getElementById("InputCirculo");
     const value = Number(input.value)
     const area = areaCirculo(value)
-    alert (area.toFixed(2))
+ alert(area.toFixed(2))
 }
