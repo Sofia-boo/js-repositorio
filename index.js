@@ -36,14 +36,14 @@ function calcularPerimetroCuadrado(){
     const input = document.getElementById("InputCuadrado");
     const value = input.value;
     const perimetro = perimetroCuadrado(value);
-    alert(perimetro);
+    document.getElementById("resultadoCuadrado").innerHTML = perimetro;
 }
 
 function calcularAreaCuadrado(){
     const input = document.getElementById("InputCuadrado");
     const value = input.value;
     const area = areaCuadrado(value);
-    alert(area);
+    document.getElementById("resultadoCuadrado").innerHTML = area;
 }
     function calcularPerimetroTriangulo(){
         const input = document.getElementById("InputTriangulo")
@@ -53,14 +53,16 @@ function calcularAreaCuadrado(){
         const value2 = Number(input2.value);
         const value3 = Number(input3.value);
         const perimetro = perimetroTriangulo(value,value2,value3);
-        alert(perimetro); }
+        document.getElementById("resultadoTriangulo").innerHTML = perimetro;
+    }
 function calcularAreaTriangulo(){
     const input4 = document.getElementById("InputTriangulo4");
     const input5 = document.getElementById("InputTriangulo5")
     const value4 = Number(input4.value);
     const value5 = Number(input5.value);
     const area = areaTriangulo(value4,value5);
-    alert(area); 
+    document.getElementById("resultadoTriangulo").innerHTML = area;
+    
 }
 function calcularAlturaTriangulo(){
 const input6 = document.getElementById("InputTriangulo");
@@ -70,27 +72,28 @@ const lado1 = Number(input6.value);
 const lado2 = Number(input7.value);
 const base = Number(input8.value);
 if(lado1 != lado2){
-    alert("¡lado 1 y lado 2 son distintos!")
+    const x = "Es un Triangulo Isosceles. Sus lados son iguales!"
+    document.getElementById("resultadoTriangulo").innerHTML = x;
 }else{
     const altura = Math.sqrt(Math.pow(lado1,2) - (Math.pow(base,2)/4))
-    alert (altura.toFixed(2))
+    document.getElementById("resultadoTriangulo").innerHTML = altura.toFixed(2);
 }
     }
 function calcularDiametroCirculo(){
     const input = document.getElementById("InputCirculo")
     const value = Number(input.value)
     const diametro = diametroCirculo(value);
-    alert(diametro)
+    document.getElementById("resultadoCirculo").innerHTML = diametro;
 }
 function calcularPerimetroCirculo(){
     const input = document.getElementById("InputCirculo");
     const value = Number(input.value)
     const perimetro = perimetroCiruclo(value)
-    alert (perimetro.toFixed(2))
+    document.getElementById("resultadoCirculo").innerHTML = perimetro.toFixed(2);
 }
 function calcularAreaCirculo(){
     const input = document.getElementById("InputCirculo");
     const value = Number(input.value)
     const area = areaCirculo(value)
- alert(area.toFixed(2))
+    document.getElementById("resultadoCirculo").innerHTML = area.toFixed(2);
 }

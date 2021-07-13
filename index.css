@@ -1,9 +1,9 @@
 :root{
-    --pink-color:#ff99c8;
+    --rosa-color:#ff99c8;
     --soft-yellow-color:#fcf6bd;
     --soft-green-color:#d0f4de;
     --soft-blue-color:#a9def9;
-    --soft-purple-color:#e4c1f9;
+    --soft-purp-color:#e4c1f9;
     --text-color:rgb(255, 255, 255);
 }
 *{
@@ -47,7 +47,7 @@ section{
 }
 .formularioCuadrado{
     background-color: var(--soft-green-color);
-    height: 43rem;
+    height: 48rem;
     min-height: 23rem;
 max-width: 35rem;
     min-width: 35rem;
@@ -68,7 +68,7 @@ main p{
 
 .formularioTriangulo{
     background-color: var(--soft-blue-color);
-    height: 43rem;
+    height: 48rem;
     min-height: 23rem;
 max-width: 35rem;
     min-width: 35rem;
@@ -93,7 +93,7 @@ outline: none;
 }
 .formularioCirculo{
     background-color: var(--soft-yellow-color);
-    height: 43rem;
+    height: 48rem;
     min-height: 23rem;
 max-width: 35rem;
     min-width: 35rem;
@@ -123,7 +123,11 @@ footer{
     padding: 5rem;
     font-size: 1.8rem;
     color: white;
-    font-size:  'Press Start 2P', cursive;
+    font-family:  'Press Start 2P', cursive;
+}
+button:hover{
+    background-color: rgb(65, 63, 63);
+   cursor: pointer;
 }
 
 
