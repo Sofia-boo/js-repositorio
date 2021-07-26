@@ -9,11 +9,28 @@ return lado*lado
 }
 console.groupEnd();
 console.group("triangulos")
-function perimetroTriangulo(lado1,lado2,base){
-return (lado1+lado2+base)
+function perimetroTriangulo(lado,base){
+return (lado*2)+base
 }
-function areaTriangulo(base,altura){
-    return (base*altura)/2
+function areaTriangulo(base,lado1){
+    return (base*(Math.sqrt(Math.pow(lado1,2) - (Math.pow(base,2)/4))))/2
+}
+function perimetroTrianguloEquilatero(lado){
+    return lado*3
+}
+function areaTrianguloEquilatero(lado){
+    return (lado * Math.sqrt(Math.pow(lado,2) - Math.pow((lado/2), 2)))/2
+    //base * altura
+}
+function AlturaTrianguloEquilatero(lado){
+ return Math.sqrt(Math.pow(lado,2) - Math.pow((lado/2), 2))
+}
+
+function perimetroTrianguloEscaleno(lado,lado2,lado3){
+    return lado+lado2+lado3
+}
+function AreaTrianguloEscaleno(lado,lado2,lado3){
+    return Math.sqrt(((lado+lado2+lado3)/2)(((lado+lado2+lado3)/2)-lado)(((lado+lado2+lado3)/2)-lado2)*(((lado+lado2+lado3)/2)-lado3))
 }
 
 console.groupEnd();
@@ -48,36 +65,28 @@ function calcularAreaCuadrado(){
     function calcularPerimetroTriangulo(){
         const input = document.getElementById("InputTriangulo")
         const input2 = document.getElementById("InputTriangulo2")
-        const input3 = document.getElementById("InputTriangulo3")
         const value = Number(input.value);
         const value2 = Number(input2.value);
-        const value3 = Number(input3.value);
-        const perimetro = perimetroTriangulo(value,value2,value3);
-        document.getElementById("resultadoTriangulo").innerHTML = perimetro;
+        const perimetro = perimetroTriangulo(value,value2);
+        document.getElementById("resultadoTriangulo").innerHTML = perimetro.toFixed(2);
     }
 function calcularAreaTriangulo(){
-    const input4 = document.getElementById("InputTriangulo4");
-    const input5 = document.getElementById("InputTriangulo5")
-    const value4 = Number(input4.value);
-    const value5 = Number(input5.value);
-    const area = areaTriangulo(value4,value5);
-    document.getElementById("resultadoTriangulo").innerHTML = area;
+    const input = document.getElementById("InputTriangulo");
+    const input2 = document.getElementById("InputTriangulo2")
+    const value = Number(input.value);
+    const value2 = Number(input2.value);
+    const area = areaTriangulo(value,value2);
+    document.getElementById("resultadoTriangulo").innerHTML = area.toFixed(2);
     
 }
 function calcularAlturaTriangulo(){
-const input6 = document.getElementById("InputTriangulo");
-const input7 = document.getElementById("InputTriangulo2");
-const input8 = document.getElementById("InputTriangulo3");
-const lado1 = Number(input6.value);
-const lado2 = Number(input7.value);
-const base = Number(input8.value);
-if(lado1 != lado2){
-    const x = "Es un Triangulo Isosceles. Sus lados son iguales!"
-    document.getElementById("resultadoTriangulo").innerHTML = x;
-}else{
+const input = document.getElementById("InputTriangulo");
+const input2 = document.getElementById("InputTriangulo2");
+const lado1 = Number(input.value);
+const base = Number(input2.value);
     const altura = Math.sqrt(Math.pow(lado1,2) - (Math.pow(base,2)/4))
     document.getElementById("resultadoTriangulo").innerHTML = altura.toFixed(2);
-}
+
     }
 function calcularDiametroCirculo(){
     const input = document.getElementById("InputCirculo")
@@ -96,4 +105,43 @@ function calcularAreaCirculo(){
     const value = Number(input.value)
     const area = areaCirculo(value)
     document.getElementById("resultadoCirculo").innerHTML = area.toFixed(2);
+}
+function calcularPerimetroTrianguloEquilatero(){
+    const input = document.getElementById("InputTrianguloEquilatero")
+    const value = Number(input.value)
+    const perimetro = perimetroTrianguloEquilatero(value)
+    document.getElementById("resultadoTrianguloEquilatero").innerHTML = perimetro.toFixed(2);
+}
+function calcularAlturaTrianguloEquilatero(){
+const input=document.getElementById("InputTrianguloEquilatero")
+const value = Number(input.value)
+const altura = AlturaTrianguloEquilatero(value)
+document.getElementById("resultadoTrianguloEquilatero").innerHTML = altura.toFixed(2);
+}
+function calcularAreaTrianguloEquilatero(){
+    const input=document.getElementById("InputTrianguloEquilatero")
+    const value = Number(input.value)
+    const area = areaTrianguloEquilatero(value)
+    document.getElementById("resultadoTrianguloEquilatero").innerHTML = area.toFixed(2)
+}
+
+function calcularPerimetroTrianguloEscaleno(){
+    const input = document.getElementById("InputTrianguloEscaleno")
+    const input2 = document.getElementById("InputTrianguloEscaleno2")
+    const input3 = document.getElementById("InputTrianguloEscaleno3")
+    const value = Number(input.value)
+    const value2 = Number(input2.value)
+    const value3 = Number(input3.value)
+    const perimetro = perimetroTrianguloEscaleno(value,value2,value3)
+    document.getElementById("resultadoTrianguloEscaleno").innerHTML = perimetro.toFixed(2)
+}
+function calcularAreaTrianguloEscaleno(){
+    const input = document.getElementById("InputTrianguloEscaleno")
+    const input2 = document.getElementById("InputTrianguloEscaleno2")
+    const input3 = document.getElementById("InputTrianguloEscaleno3")
+    const value = Number(input.value)
+    const value2 = Number(input2.value)
+    const value3 = Number(input3.value)
+    const area = AreaTrianguloEscaleno(value,value2,value3)
+    document.getElementById("resultadoTrianguloEscaleno").innerHTML = area.toFixed(2)
 }

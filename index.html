@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>figuras curso de js</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -13,19 +15,46 @@
 <body>
     <script src="index.js"></script>
   <header>
-      <h1>¡Figuras Geometricas!</h1>
-      <img src="./icon/geometry.svg" alt="Icono, imagen sobre geometria.">
-      <p>Bienvenido :)</p>
+     
+  <div class="header">
+    <h1>Matemáticas</h1>
+    <img src="./icon/geometry.svg" alt="Icono, imagen sobre geometria.">
+    <p>Figuras Geometricas</p>
+    
+  </div>
+        <div class="contenedor">
+            <article>
+                <button id="btn-abrir-popup" class="btn-abrir-popup">¿Qué es el PERIMETRO y el AREA?</button>
+             
+            </article>
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <h3>PERIMETRO</h3>
+                    <h4>En geometría, el perímetro es la suma de todos los lados. El término puede ser utilizado tanto para la distancia o longitud, como para la longitud del contorno de una forma.</h4>
+                    <h3>AREA</h3>
+                    <h4>El área es un concepto métrico que puede permitir asignar una medida a la extensión de una superficie, expresada en matemáticas como unidades de medida denominadas unidades de superficie.​</h4>
+                    
+                    
+                </div>
+            </div>
+
+        <script src="popup.js"></script>
+  
+
+        
+        
   </header>
   <main>
+
     <section>
-      <div class="formularioCuadrado">
+      <div class="formularioCuadrado" id="1">
           <h2>calcula el area y perimetro de un <br> cuadrado</h2>
           <form>
               <label for="InputCuadrado">
 <p>Escribe cuanto mide un lado de tu cuadrado</p>
               </label><br>
-              <input type="number" id="InputCuadrado" placeholder="Un lado del cuadrado"> <br>
+              <input type="number" id="InputCuadrado" placeholder="lado"> <br>
               <button type="button" onclick="calcularPerimetroCuadrado()">
                   Calcular Perimetro
               </button>
@@ -37,32 +66,29 @@
           </form>
       </div>
 
-      <div class="formularioTriangulo">
-        <h2>calcula el area y perimetro de un Triangulo</h2>
+      <div class="formularioTriangulo" id="2">
+        <h2>calcula el area y perimetro de un Triangulo Isosceles</h2>
         <form>
             <label for="InputTriangulo">
-<p>Escribe cuanto mide cada lado de tu Triangulo y su base</p>
+<p>Escribe cuanto mide el lado de tu Triangulo y su base</p>
             </label>
-            <input type="number" id="InputTriangulo" placeholder="lado A">
-            <input type="number" id="InputTriangulo2" placeholder="lado B">
-           <input type="number" id="InputTriangulo3" placeholder="Base">
+            <input type="number" id="InputTriangulo" placeholder="lado">
+           <input type="number" id="InputTriangulo2" placeholder="Base">
             <button type="button" onclick="calcularPerimetroTriangulo()">
                 Calcular Perimetro
             </button> 
             <button type="button" onclick="calcularAlturaTriangulo()">
                 Calcular Altura
                 </button>
-            <br>
-            <input type="number" id="InputTriangulo4" placeholder="altura del triangulo">
-            <input type="number" id="InputTriangulo5" placeholder="base del triangulo">
             <button type="button" onclick="calcularAreaTriangulo()">
                 Calcular Area
             </button><br>
 <p>resultado:</p>
 <p id="resultadoTriangulo"></p>
         </form>
+
     </div>
-    <div class="formularioCirculo">
+    <div class="formularioCirculo" id="3">
         <h2>Calcula el area y perimetro de un Circulo</h2>
         <form>
         <label for="formularioCirculo">
@@ -82,11 +108,51 @@
 <p id="resultadoCirculo"></p>
     </form>
     </div>
+
+    <div class="formularioTrianguloEquilatero" id="4">
+        <h2>Calcula el area y perimetro de un Triangulo Equilatero</h2>
+        <form>
+        <label for="formularioTrianguloEquilatero">
+       <p>Calcula la altura, el area y el perimetro de tu Triangulo.</p>
+        </label>
+        <input type="number" id="InputTrianguloEquilatero" placeholder="lado ">
+        <button type="button" onclick="calcularPerimetroTrianguloEquilatero()">
+            Calcular Perimetro
+        </button>
+  <button type="button" onclick="calcularAreaTrianguloEquilatero()">
+    Calcular Area
+</button>
+<button type="button" onclick="calcularAlturaTrianguloEquilatero()">
+    Calcular Altura
+</button>
+<p>resultado:</p>
+<p id="resultadoTrianguloEquilatero"></p>
+    </form>
+    </div>
+    <div class="formularioTrianguloEscaleno" id="5">
+        <h2>calcula el area y perimetro de un Triangulo Escaleno</h2>
+        <form>
+            <label for="InputTrianguloEscaleno">
+<p>Escribe cuanto mide el lado de tu Triangulo Escaleno y su base</p>
+            </label>
+            <input type="number" id="InputTrianguloEscaleno" placeholder="lado">
+           <input type="number" id="InputTrianguloEscaleno2" placeholder="lado">
+           <input type="number" id="InputTrianguloEscaleno3" placeholder="base">
+            <button type="button" onclick="calcularPerimetroTrianguloEscaleno()">
+                Calcular Perimetro
+            </button> 
+            <button type="button" onclick="calcularAreaTrianguloEscaleno()">
+                Calcular Area
+            </button><br>
+<p>resultado:</p>
+<p id="resultadoTrianguloEscaleno"></p>
+        </form>
+    </div>
     </section>
   </main>
   <footer>
-      <p>Hecho con 🧡 sofi  :) </p>
-    
+      <p>sofia </p>
   </footer>
+
 </body>
 </html>
